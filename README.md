@@ -8,7 +8,7 @@
 |Matrícula | Aluno |
 | 202402798502 | Breno Chaves da Cunha |
 | 202402875361  |  Gustavo Leonel Salvador |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 202402075365  |  Guilherme Resende da Rocha |
 
 ## Sobre
 Descreva o seu projeto em linhas gerais.
