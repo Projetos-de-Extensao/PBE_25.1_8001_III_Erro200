@@ -6,7 +6,7 @@
 
 ## Alunos
 |Matrícula | Aluno |
-| -- | -- |
+| 202402798502 | Breno Chaves da Cunha |
 | 202402875361  |  Gustavo Leonel Salvador |
 | xx/xxxxxx  |  xxxx xxxx xxxxx |
 
