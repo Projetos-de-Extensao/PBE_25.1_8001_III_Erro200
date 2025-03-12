@@ -11,7 +11,7 @@
 | 202402875361 | Gustavo Leonel Salvador |
 | 202402075365 | Guilherme Resende da Rocha |
 | 202402697706 | João Gabriel Guedes |
-
+| 202401614513 | Bryan Amorim dos Santos |
 
 ## Sobre
 Descreva o seu projeto em linhas gerais.
