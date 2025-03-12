@@ -5,11 +5,12 @@
 **Código da Disciplina**: FGA0208-T01<br>
 
 ## Alunos
-|Matrícula | Aluno |
-- | 202402798502 | Breno Chaves da Cunha |
-- | 202402875361  |  Gustavo Leonel Salvador |
-- | 202402075365  |  Guilherme Resende da Rocha |
-- | 202402697706  |  João Gabriel Guedes |
+| Matrícula | Aluno |
+| --- | --- |
+| 202402798502 | Breno Chaves da Cunha |
+| 202402875361 | Gustavo Leonel Salvador |
+| 202402075365 | Guilherme Resende da Rocha |
+| 202402697706 | João Gabriel Guedes |
 
 
 ## Sobre
