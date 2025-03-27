@@ -1,5 +1,4 @@
 site_name: Projeto Back-end 25.1 III
 
 theme:
-  name: material
-  custom_dir: overrides
+  name: readthedocs
