@@ -22,16 +22,18 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
 ### 1. Qual o objetivo principal da aplicação?
  
 <p align = "justify">
-<b>XXXX</b> - Deve ser uma plataforma onde qualquer pessoa possa...
+
+<b>Bryan</b> -  Deve ser uma plataforma onde qualquer pessoa possa solicitar embarcações sob demanda para transporte de pequenas cargas, reduzindo o tempo de espera e melhorando a conectividade entre a Ilha de Primeira e o continente.
 </p>
  
-<b>ZZZ</b> - A plataforma deve fornece...
+<b>Breno</b> -  A plataforma deve fornecer soluções inovadoras para otimizar a logística, incluindo entregas rápidas e eficientes, usando de embarcações ecológicas para reduzir impactos ambientais.
+
+<b>Guilherme</b> - O objetivo da aplicação é integrar tecnologias de mobilidade marítima e logística inteligente, proporcionando um sistema de transporte seguro, ágil e sustentável para os moradores e visitantes da Ilha de Primeira.
  
-<b>YYYY</b> - O objetivo da aplicação é....
+<b>João</b> - O principal objetivo da aplicação é a criação de um ecossistema de transporte eficiente e conectado, utilizando monitoramento em tempo real.
  
-<b>WWWW</b> - O principal objetivo da aplicação é a...
- 
-<b>KKKK</b> - A plataforma deve gerenciar...
+<b>Gustavo</b> -  A plataforma deve gerenciar todo o processo logístico, desde a solicitação de transporte até a entrega de mercadorias, garantindo um fluxo contínuo e confiável entre a ilha e o continente.
+
 </p>
  
 ---
