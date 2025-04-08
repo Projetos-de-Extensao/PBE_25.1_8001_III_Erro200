@@ -4,7 +4,7 @@
 
 ### App para acessibilidade marítima:
 
-Empresas como a Uber operam serviços de transporte aquático em Londres, conhecidos como Uber Boat, que oferecem deslocamento eficiente ao longo do rio Tâmisa. Esse modelo poderia ser adaptado para a Ilha de Primeira, no Rio de Janeiro, permitindo que moradores e visitantes solicitem embarcações sob demanda por meio de um aplicativo. Essa solução reduziria o tempo de espera, melhoraria a conectividade com a cidade e facilitaria o transporte de passageiros e pequenas cargas de forma rápida e conveniente.
+Empresas como a Uber operam serviços de transporte aquático em Londres, conhecidos como Uber Boat, que oferecem deslocamento eficiente ao longo do rio Tâmisa. Esse modelo poderia ser adaptado para a Ilha de Primeira, no Rio de Janeiro, permitindo que moradores e visitantes solicitem embarcações sob demanda por meio de um aplicativo. Essa solução reduziria o tempo de espera, melhoraria a conectividade com a cidade e facilitaria o transporte de passageiros de forma rápida e conveniente.
 
 ### Drones para entregas remotas:
 
@@ -13,6 +13,11 @@ A Amazon desenvolveu um programa que está sendo utilizado em testes no Estados 
 ### Logística especializada em ilhas:
 
 Majonav Navegação é uma empresa com mais de quatro décadas de experiência, a Majonav é líder em logística rodofluvial, fornecendo soluções abrangentes para o transporte de mercadorias em diversas regiões, incluindo áreas insulares.
+
+### App para entrega de produtos:
+
+A solução proposta consiste em um aplicativo de entregas, idealizado para atender moradores da ilha primeira onde o acesso é feito majoritariamente por barcos. O fluxo foi desenhado para garantir praticidade, rastreabilidade e segurança em todas as etapas da entrega.
+O app contempla três perfis principais de usuários: moradores, entregadores e barqueiros. Cada perfil possui telas específicas e funcionalidades adequadas à sua função no processo logístico.
 
 # Ideias de inovação para otimização do acesso à Ilha de Primeira:
 
