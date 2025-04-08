@@ -1,0 +1,44 @@
+@startuml
+left to right direction
+
+actor Morador
+actor Entregador
+actor Barqueiro
+
+package "App Simblissima Delivery" {
+    usecase "Cadastrar Entrega" as UC01
+    usecase "Acompanhar Status" as UC02
+    usecase "Retirar Pedido no Posto" as UC03
+    usecase "Efetuar Pagamento" as UC04
+}
+
+package "Entrega Terrestre" {
+    usecase "Visualizar Rota de Entrega" as UC05
+    usecase "Entregar no Porto" as UC06
+}
+
+package "Entrega Náutica" {
+    usecase "Receber Pedido no Porto" as UC07
+    usecase "Entregar no Posto Final" as UC08
+}
+
+
+
+Morador --> UC01
+Morador --> UC02
+Morador --> UC03
+Morador --> UC04
+
+Entregador --> UC05
+Entregador --> UC06
+
+Barqueiro --> UC07
+Barqueiro --> UC08
+
+
+
+UC01 --> UC04 : <<include>>
+UC02 <-- UC05 : <<extend>>
+UC03 <-- UC08 : <<extend>>
+
+@enduml
