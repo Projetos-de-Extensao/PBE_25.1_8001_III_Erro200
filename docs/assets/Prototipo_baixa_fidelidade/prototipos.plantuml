@@ -88,3 +88,23 @@
 
 }
 @endsalt
+
+
+
+@startsalt
+{
+{+
+  Entrega de Produto via Barco
+  
+  Pedido:               | 456789
+  Entregar no Posto:    | Posto 3, Unidade 7
+  Código Confirmação:   | 1234
+
+  Status: Produto Retirado do Porto 
+}
+
+[  Confirmar Entrega no Posto ]
+}
+@endsalt
+
+
