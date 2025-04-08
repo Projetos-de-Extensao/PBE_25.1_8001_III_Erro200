@@ -1,0 +1,110 @@
+@startsalt
+{
+{+
+  Nova Entrega - Solicitação
+  
+  Nome do Morador:           | "_______"
+  Posto de Entrega:          | "_______"
+  Unidade de Entrega:               | "_______"
+  Observações:               | "_______"
+  Método de Pagamento:       | ^Pix / Cartão / Dinheiro^
+}
+
+[ Confirmar Pedido ]
+}
+@endsalt
+
+
+
+@startsalt
+{
+{+
+  Acompanhar Entrega
+  
+  Número do Pedido:       |  456789
+  Status Atual:           |  A caminho do Porto
+  Entregador:             |  Carlos Silva
+  Estimativa de Entrega:  |  18:45
+  Local Atual:            |  Rua das Flores, 120
+}
+
+[ Atualizar Status ]
+[ Cancelar Pedido ]
+}
+@endsalt
+
+
+@startsalt
+{
+{+
+  Retirada de Pedido no Posto
+  
+  Pedido:           | 456789
+  Retirar em:       | Posto 3, Unidade 7
+  Código Retirada:  | 1234
+
+  
+  Status: Aguardando Retirada
+}
+
+[ Retirar Pedido ]
+
+}
+@endsalt
+
+
+
+@startsalt
+{
+{+
+  Rota de Entrega
+  
+  Pedido:           | 456789
+  Retirar em:       | Loja X - Av. Central, 234
+  Entregar em:      | Porto 3, Unidade 7
+  Previsão:         | 18:30
+}
+
+[ Ver Mapa da Rota ]
+[ Contatar Morador ]
+}
+@endsalt
+
+
+@startsalt
+{
+{+
+  Entregar Produto ao Posto
+  
+  Pedido:           | 456789
+  Morador:          | Bryan Amorim
+  Código Confirmação: | 1234
+  
+  Situação: Pronto para Entrega 
+}
+
+[  Confirmar Entrega ao Posto ]
+[  Contactar Morador ]
+
+}
+@endsalt
+
+
+
+@startsalt
+{
+{+
+  Entrega de Produto via Barco
+  
+  Pedido:               | 456789
+  Entregar no Posto:    | Posto 3, Unidade 7
+  Código Confirmação:   | 1234
+
+  Status: Produto Retirado do Porto 
+}
+
+[  Confirmar Entrega no Posto ]
+}
+@endsalt
+
+

@@ -1,0 +1,20 @@
+@startuml
+
+class Morador 
+class Pedido 
+class Entregador 
+class Barqueiro 
+class Porto 
+class Posto 
+
+Morador  -->  Pedido : faz
+Pedido  -->  Entregador : é entregue por
+Entregador  -->  Porto : entrega em
+
+Porto  -->  Pedido : recebe
+Barqueiro  -->  Pedido : retira
+Pedido  -->  Posto : é destinado a
+
+
+
+@enduml
