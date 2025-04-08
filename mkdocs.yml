@@ -1,4 +1,19 @@
 site_name: Projeto Back-end 25.1 III
 
 theme:
-  name: readthedocs
+  name: material
+  palette:
+    scheme: default
+    toggle:
+      icon: material/toggle-switch
+      name: Switch between light and dark mode
+  features:
+    - navigation.tabs
+    - navigation.expand
+    - navigation.top
+    - navigation.sections
+    - navigation.instant
+    - navigation.tracking
+    - navigation.search.highlight
+    - navigation.search.suggest
+    - navigation.search.share

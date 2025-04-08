@@ -1,20 +1,25 @@
 
-# NomedoProjeto
+# Projeto Erro 200
 
 **Número do Grupo**: 3<br>
 **Código da Disciplina**: FGA0208-T01<br>
 
 ## Alunos
-| Matrícula | Aluno |
-| --- | --- |
-| 202402798502 | Breno Chaves da Cunha |
-| 202402875361 | Gustavo Leonel Salvador |
-| 202402075365 | Guilherme Resende da Rocha |
-| 202402697706 | João Gabriel Guedes |
-| 202401614513 | Bryan Amorim dos Santos |
+
+
+| Matrícula       | Nome |            |
+|------------|-------|--------------|
+| 202402798502      | Breno Chaves da Cunha
+| 202402875361      | Gustavo Leonel Salvador
+| 202402075365      | Guilherme Resende da Rocha
+| 202402697706      | João Gabriel Guedes
+| 202401614513      | Bryan Amorim dos Santos
+
 
 ## Sobre
-Descreva o seu projeto em linhas gerais.
+
+ **Aplicativo de Entregas para Ilha Primeira**
+ O projeto propõe um app de entregas focado nas necessidades dos moradores da Ilha Primeira, onde o transporte é feito principalmente por barcos. A solução garante praticidade, rastreabilidade e segurança nas entregas, com funcionalidades específicas para três tipos de usuários: moradores, entregadores e barqueiros. O desenvolvimento inclui a criação de uma API REST, com o tema final ainda em definição.
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em termos de interface e funcionamento.
