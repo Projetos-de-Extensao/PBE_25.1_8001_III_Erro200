@@ -15,8 +15,9 @@
 ## Sobre
 O projeto propõe um app de entregas focado nas necessidades dos moradores da Ilha Primeira, onde o transporte é feito principalmente por barcos. A solução garante praticidade, rastreabilidade e segurança nas entregas, com funcionalidades específicas para três tipos de usuários: moradores, entregadores e barqueiros. O desenvolvimento inclui a criação de uma API REST.
 
-## Link do site 
-https://projetos-de-extensao.github.io/PBE_25.1_8001_III_Erro200/
+## Link do Canva
+(https://www.canva.com/design/DAGkEt2vP9g/dsBjUmVpyzwLrZkqis9htA/edit?utm_content=DAGkEt2vP9g&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+)
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em termos de interface e funcionamento.
