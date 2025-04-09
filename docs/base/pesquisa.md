@@ -1,4 +1,12 @@
-# Pesquisa
+﻿# Pesquisa
+
+# Nossa solução
+
+A solução proposta consiste no desenvolvimento de um aplicativo de entregas, concebido especialmente para atender as necessidades dos moradores da Ilha Primeira, localidade cujo acesso se da predominantemente por meio de embarcações.
+
+O fluxo operacional foi cuidadosamente estruturado com o objetivo de assegurar praticidade, rastreabilidade, e segurança em todas as etapas do processo logístico. Para isso, o aplicativo contempla três perfis distintos de usuários: moradores, entregadores e barqueiros. Cada um desses perfis possui interfaces e funcionalidades específicas, alinhadas as respectivas atribuições dentro do sistema de entregas.
+
+Essa abordagem visa otimizar a comunicação entre os agentes envolvidos, garantir maior eficiência na execução das entregas e promover uma experiência mais integrada e confiável para todos os usuários da plataforma.
 
 # Principais soluções existentes
 
