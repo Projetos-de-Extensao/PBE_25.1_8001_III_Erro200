@@ -21,16 +21,12 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # URLs tradicionais da sua aplicação (HTML)
     path('', include('myapp.urls')),
 
-    # URLs da API REST
     path('api/', include('myapp.api_urls')),
 
-    # Autenticação da API REST
     path('api-auth/', include('rest_framework.urls')),
 
-    # Documentação Swagger e Redoc
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
