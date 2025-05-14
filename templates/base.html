@@ -11,8 +11,19 @@
         <div class="container">
             <a class="navbar-brand" href="/">Sistema</a>
             <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto">
-                    {% if user.is_authenticated %}
+                <ul class="navbar-nav ms-auto">                    {% if user.is_authenticated %}
+                        {% if user.is_superuser %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'gerenciar-pedidos' %}">Gerenciar Pedidos</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'meus-pedidos' %}">Meus Pedidos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'novo-pedido' %}">Novo Pedido</a>
+                            </li>
+                        {% endif %}
                         <li class="nav-item">
                             <span class="nav-link">Olá, {{ user.username }}</span>
                         </li>

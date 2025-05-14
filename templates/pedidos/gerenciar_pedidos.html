@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Gerenciar Pedidos{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Gerenciar Pedidos</h2>
+    {% if pedidos %}
+        {% for pedido in pedidos %}
+        <div class="card mb-3">
+            <div class="card-header">
+                <h5>Pedido #{{ pedido.id }}</h5>
+                <p class="mb-0">Cliente: {{ pedido.usuario.username }}</p>
+                <p class="mb-0">Status: <span class="badge bg-primary">{{ pedido.get_status_display }}</span></p>
+            </div>
+            <div class="card-body">
+                <h6>Itens:</h6>
+                <ul class="list-group mb-3">
+                    {% for item in pedido.itens.all %}
+                    <li class="list-group-item">
+                        {{ item.quantidade }}x {{ item.produto.nome }} - R$ {{ item.preco_unitario }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% if pedido.status == 'PENDENTE' %}
+                <div class="btn-group">
+                    <form method="post" action="{% url 'processar-pedido' pedido.id %}" style="display: inline;">
+                        {% csrf_token %}
+                        <input type="hidden" name="acao" value="aceitar">
+                        <button type="submit" class="btn btn-success me-2">Aceitar</button>
+                    </form>
+                    <form method="post" action="{% url 'processar-pedido' pedido.id %}" style="display: inline;">
+                        {% csrf_token %}
+                        <input type="hidden" name="acao" value="rejeitar">
+                        <button type="submit" class="btn btn-danger">Rejeitar</button>
+                    </form>
+                </div>
+                {% endif %}
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Criado em: {{ pedido.data_criacao }}</small>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-info">
+            Não há pedidos pendentes.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
