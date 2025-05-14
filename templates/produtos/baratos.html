@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Produtos Baratos{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">Produtos Baratos</h1>
+
+    {% if produtos %}
+        <div class="row">
+            {% for produto in produtos %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ produto.nome }}</h5>
+                            <p class="card-text">Preço: R$ {{ produto.preco }}</p>
+                            <p class="card-text">{{ produto.descricao }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Nenhum produto barato encontrado.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -34,13 +34,10 @@ schema_view = get_schema_view(
    permission_classes=(permissions.AllowAny,),
 )
 
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('myapp.urls')),
     path('api/', include('myapp.api_urls')),
-    path('api-auth/', include('rest_framework.urls')),
+    path('', include('myapp.urls')),  # Incluindo as novas URLs de autenticação
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
