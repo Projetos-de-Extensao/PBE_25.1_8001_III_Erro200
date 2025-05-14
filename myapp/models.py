@@ -38,3 +38,16 @@ class ItemPedido(models.Model):
 
     def __str__(self):
         return f'{self.quantidade}x {self.produto.nome}'
+
+    class Meta:
+        abstract = True
+
+class ItemPedidoCustom(models.Model):
+    pedido = models.ForeignKey(Pedido, related_name='itens', on_delete=models.CASCADE)
+    nome = models.CharField(max_length=100)
+    descricao = models.TextField()
+    quantidade = models.IntegerField(default=1)
+    preco_unitario = models.DecimalField(max_digits=6, decimal_places=2)
+
+    def __str__(self):
+        return f'{self.quantidade}x {self.nome}'

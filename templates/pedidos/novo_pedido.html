@@ -4,39 +4,100 @@
 
 {% block content %}
 <div class="container">
-    <h2>Criar Novo Pedido</h2>
+    <h2>Novo Pedido</h2>
+    
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     <form method="post">
         {% csrf_token %}
-        <div class="row">
-            <div class="col-md-8">
-                {% for produto in produtos %}
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ produto.nome }}</h5>
-                        <p class="card-text">{{ produto.descricao }}</p>
-                        <p class="card-text">Preço: R$ {{ produto.preco }}</p>
+        <div id="itens-container">
+            <div class="item-form mb-4">
+                <h4>Item 1</h4>
+                <div class="row">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <label for="quantidade_{{ produto.id }}">Quantidade:</label>
-                            <input type="number"
-                                   class="form-control"
-                                   id="quantidade_{{ produto.id }}"
-                                   name="produto_{{ produto.id }}"
-                                   min="0"
-                                   value="0">
+                            <label for="nome_0">Nome do Item</label>
+                            <input type="text" class="form-control" id="nome_0" name="nome_0" required>
                         </div>
                     </div>
-                </div>
-                {% endfor %}
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Finalizar Pedido</h5>
-                        <button type="submit" class="btn btn-primary">Confirmar Pedido</button>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="descricao_0">Descrição</label>
+                            <textarea class="form-control" id="descricao_0" name="descricao_0" rows="2" required></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="quantidade_0">Quantidade</label>
+                            <input type="number" class="form-control" id="quantidade_0" name="quantidade_0" value="1" min="1" required>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="preco_0">Preço Unitário (R$)</label>
+                            <input type="number" class="form-control" id="preco_0" name="preco_0" step="0.01" min="0.01" required>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <button type="button" class="btn btn-secondary mb-3" onclick="adicionarItem()">Adicionar Mais um Item</button>
+        
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Criar Pedido</button>
+            </div>
+        </div>
     </form>
 </div>
+
+<script>
+let itemCount = 1;
+
+function adicionarItem() {
+    const container = document.getElementById('itens-container');
+    const novoItem = document.createElement('div');
+    novoItem.className = 'item-form mb-4';
+    novoItem.innerHTML = `
+        <h4>Item ${itemCount + 1}</h4>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="nome_${itemCount}">Nome do Item</label>
+                    <input type="text" class="form-control" id="nome_${itemCount}" name="nome_${itemCount}" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="descricao_${itemCount}">Descrição</label>
+                    <textarea class="form-control" id="descricao_${itemCount}" name="descricao_${itemCount}" rows="2" required></textarea>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="quantidade_${itemCount}">Quantidade</label>
+                    <input type="number" class="form-control" id="quantidade_${itemCount}" name="quantidade_${itemCount}" value="1" min="1" required>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="preco_${itemCount}">Preço Unitário (R$)</label>
+                    <input type="number" class="form-control" id="preco_${itemCount}" name="preco_${itemCount}" step="0.01" min="0.01" required>
+                </div>
+            </div>
+        </div>
+    `;
+    container.appendChild(novoItem);
+    itemCount++;
+}
+</script>
 {% endblock %}

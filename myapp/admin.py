@@ -1,15 +1,15 @@
 from django.contrib import admin
-from .models import Produto, Pedido, ItemPedido
+from .models import Produto, Pedido, ItemPedidoCustom
 
-class ItemPedidoInline(admin.TabularInline):
-    model = ItemPedido
-    extra = 0
+class ItemPedidoCustomInline(admin.TabularInline):
+    model = ItemPedidoCustom
+    extra = 1
 
 class PedidoAdmin(admin.ModelAdmin):
     list_display = ['id', 'usuario', 'status', 'data_criacao']
     list_filter = ['status', 'data_criacao']
     search_fields = ['usuario__username']
-    inlines = [ItemPedidoInline]
+    inlines = [ItemPedidoCustomInline]
 
 class ProdutoAdmin(admin.ModelAdmin):
     list_display = ['nome', 'preco', 'disponivel']

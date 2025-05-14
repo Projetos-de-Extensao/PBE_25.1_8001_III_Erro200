@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db import transaction
-from .models import Produto, Pedido, ItemPedido
+from .models import Produto, Pedido, ItemPedido, ItemPedidoCustom
 
 def login_view(request):
     if request.method == 'POST':
@@ -72,31 +72,45 @@ def meus_pedidos(request):
 @login_required
 def novo_pedido(request):
     if request.method == 'POST':
-        produtos_selecionados = []
-        for key, value in request.POST.items():
-            if key.startswith('produto_') and int(value) > 0:
-                produto_id = int(key.split('_')[1])
-                quantidade = int(value)
-                produtos_selecionados.append((produto_id, quantidade))
+        # Coletar dados dos itens do formulário
+        itens_data = []
+        i = 0
+        while f'nome_{i}' in request.POST:
+            nome = request.POST.get(f'nome_{i}')
+            descricao = request.POST.get(f'descricao_{i}')
+            quantidade = int(request.POST.get(f'quantidade_{i}'))
+            preco = float(request.POST.get(f'preco_{i}'))
+            
+            if nome and descricao and quantidade and preco:
+                itens_data.append({
+                    'nome': nome,
+                    'descricao': descricao,
+                    'quantidade': quantidade,
+                    'preco_unitario': preco
+                })
+            i += 1
         
-        if produtos_selecionados:
+        if itens_data:
             with transaction.atomic():
+                # Criar o pedido
                 pedido = Pedido.objects.create(usuario=request.user)
-                for produto_id, quantidade in produtos_selecionados:
-                    produto = Produto.objects.get(id=produto_id)
-                    ItemPedido.objects.create(
+                
+                # Criar os itens do pedido
+                for item_data in itens_data:
+                    ItemPedidoCustom.objects.create(
                         pedido=pedido,
-                        produto=produto,
-                        quantidade=quantidade,
-                        preco_unitario=produto.preco
+                        nome=item_data['nome'],
+                        descricao=item_data['descricao'],
+                        quantidade=item_data['quantidade'],
+                        preco_unitario=item_data['preco_unitario']
                     )
+                
                 messages.success(request, 'Pedido criado com sucesso!')
                 return redirect('meus-pedidos')
         else:
-            messages.error(request, 'Selecione pelo menos um produto.')
-    
-    produtos = Produto.objects.filter(disponivel=True)
-    return render(request, 'pedidos/novo_pedido.html', {'produtos': produtos})
+            messages.error(request, 'Adicione pelo menos um item ao pedido.')
+            
+    return render(request, 'pedidos/novo_pedido.html')
 
 @user_passes_test(is_admin)
 def gerenciar_pedidos(request):

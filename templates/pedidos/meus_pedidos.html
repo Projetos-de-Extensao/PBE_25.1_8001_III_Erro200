@@ -17,7 +17,8 @@
                 <ul class="list-group mb-3">
                     {% for item in pedido.itens.all %}
                     <li class="list-group-item">
-                        {{ item.quantidade }}x {{ item.produto.nome }} - R$ {{ item.preco_unitario }}
+                        {{ item.quantidade }}x {{ item.nome }} - R$ {{ item.preco_unitario }}
+                        <p class="mb-0 text-muted"><small>{{ item.descricao }}</small></p>
                     </li>
                     {% endfor %}
                 </ul>
