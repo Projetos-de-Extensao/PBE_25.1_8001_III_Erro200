@@ -2,20 +2,6 @@
     "users": [
         {
             "model": "auth.user",
-            "pk": 3,
-            "fields": {
-                "username": "admin",
-                "first_name": "Admin",
-                "last_name": "Sistema",
-                "email": "admin@exemplo.com",
-                "password": "pbkdf2_sha256$600000$abc123def456$",
-                "is_active": true,
-                "is_staff": true,
-                "is_superuser": true
-            }
-        },
-        {
-            "model": "auth.user",
             "pk": 1,
             "fields": {
                 "username": "cliente1",

@@ -1,7 +1,8 @@
 Ao dar clone no repositório, faça:
 python manage.py makemigrations
 python manage.py migrate
-python manage.py load_inicial_data
+python manage.py load_initial_data
+python manage.py createsuperuser
 python manage.py runserver
 
 # API de Pedidos
