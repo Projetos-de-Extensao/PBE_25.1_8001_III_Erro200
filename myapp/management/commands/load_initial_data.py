@@ -10,6 +10,15 @@ class Command(BaseCommand):
         # Criando usuários
         users_data = [
             {
+                'username': 'admin',
+                'first_name': 'Admin',
+                'last_name': 'Sistema',
+                'email': 'admin@exemplo.com',
+                'password': 'admin123',
+                'is_staff': True,
+                'is_superuser': True
+            },
+            {
                 'username': 'cliente1',
                 'first_name': 'João',
                 'last_name': 'Silva',
