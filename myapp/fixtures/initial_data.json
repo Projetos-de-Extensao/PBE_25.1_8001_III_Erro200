@@ -1,0 +1,76 @@
+{
+    "users": [
+        {
+            "model": "auth.user",
+            "pk": 1,
+            "fields": {
+                "username": "cliente1",
+                "first_name": "João",
+                "last_name": "Silva",
+                "email": "joao@exemplo.com",
+                "password": "pbkdf2_sha256$600000$abc123def456$",
+                "is_active": true
+            }
+        },
+        {
+            "model": "auth.user",
+            "pk": 2,
+            "fields": {
+                "username": "cliente2",
+                "first_name": "Maria",
+                "last_name": "Santos",
+                "email": "maria@exemplo.com",
+                "password": "pbkdf2_sha256$600000$abc123def456$",
+                "is_active": true
+            }
+        }
+    ],
+    "items": [
+        {
+            "model": "myapp.item",
+            "pk": 1,
+            "fields": {
+                "nome": "Pizza Margherita",
+                "descricao": "Pizza tradicional italiana com molho de tomate, mussarela e manjericão"
+            }
+        },
+        {
+            "model": "myapp.item",
+            "pk": 2,
+            "fields": {
+                "nome": "Pizza Calabresa",
+                "descricao": "Pizza com molho de tomate, mussarela e calabresa fatiada"
+            }
+        },
+        {
+            "model": "myapp.item",
+            "pk": 3,
+            "fields": {
+                "nome": "Pizza Portuguesa",
+                "descricao": "Pizza com molho de tomate, mussarela, presunto, ovos, cebola e ervilhas"
+            }
+        }
+    ],
+    "pedidos": [
+        {
+            "model": "myapp.pedido",
+            "pk": 1,
+            "fields": {
+                "cliente": 1,
+                "itens": [1, 2],
+                "valor_total": "89.90",
+                "status": "Entregue"
+            }
+        },
+        {
+            "model": "myapp.pedido",
+            "pk": 2,
+            "fields": {
+                "cliente": 2,
+                "itens": [2, 3],
+                "valor_total": "94.90",
+                "status": "Em trânsito"
+            }
+        }
+    ]
+}
