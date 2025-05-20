@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.conf import settings
+
 
 class Item(models.Model):
     nome = models.CharField(max_length=100)
@@ -10,12 +10,7 @@ class Item(models.Model):
         return self.nome
     
 class Pedido(models.Model):
-    cliente = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        null=True,  # Allow null temporarily
-        default=None  # Set default as None
-    )  
+    cliente = models.ForeignKey(User,on_delete=models.CASCADE)  
     itens = models.ManyToManyField(Item)
     valor_total = models.DecimalField(max_digits=10, decimal_places=2)
     status = models.CharField(
