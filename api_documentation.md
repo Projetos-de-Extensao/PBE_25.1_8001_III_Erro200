@@ -5,86 +5,29 @@ python manage.py load_initial_data
 python manage.py createsuperuser
 python manage.py runserver
 
-# API de Pedidos
 
-## Autenticação
-```http
-Authorization: Token <seu-token>
-```
-
-## Endpoints
-
-### Pedidos
-
-**Listar Pedidos**
-```http
-GET /api/pedidos/
-```
-
-**Criar Pedido**
-```http
-POST /api/pedidos/
-{
-  "cliente": 1,
-  "itens": [1, 2],
-  "valor_total": "100.00"
-}
-```
-
-**Obter Pedido por ID**
-```http
-GET /api/pedidos/{id}/
-```
-
-**Atualizar Pedido**
-```http
-PUT /api/pedidos/{id}/
-{
-  "cliente": 1,
-  "itens": [1, 2],
-  "valor_total": "150.00"
-}
-```
-
-**Deletar Pedido**
-```http
-DELETE /api/pedidos/{id}/
-```
-
-### Itens
-
-**Listar Itens**
-```http
-GET /api/items/
-```
-
-**Criar Item**
-```http
-POST /api/items/
-{
-  "nome": "Nome do Item",
-  "descricao": "Descrição do Item"
-}
-```
-
-**Obter Item por ID**
-```http
-GET /api/items/{id}/
-```
-
-**Atualizar Item**
-```http
-PUT /api/items/{id}/
-{
-  "nome": "Nome Atualizado",
-  "descricao": "Descrição Atualizada"
-}
-```
-
-**Deletar Item**
-```http
-DELETE /api/items/{id}/
-```
+# Endpoints Atuais
+## Pedidos
+- GET /api/pedidos/ - Lista todos os pedidos
+- POST /api/pedidos/ - Cria novo pedido
+- GET /api/pedidos/{id}/ - Obtém pedido específico
+- PUT /api/pedidos/{id}/ - Atualiza pedido
+- DELETE /api/pedidos/{id}/ - Remove pedido
+- GET /api/pedidos/{id}/itens/ - Lista itens de um pedido
+## Itens
+- GET /api/itens/ - Lista todos os itens
+- POST /api/itens/ - Cria novo item
+- GET /api/itens/{id}/ - Obtém item específico
+- PUT /api/itens/{id}/ - Atualiza item
+- DELETE /api/itens/{id}/ - Remove item
+- GET /api/itens/{id}/pedidos/ - Lista pedidos com este item
+## Usuários
+- GET /api/users/ - Lista todos os usuários
+- POST /api/users/ - Cria novo usuário
+- GET /api/users/{id}/ - Obtém usuário específico
+- PUT /api/users/{id}/ - Atualiza usuário
+- DELETE /api/users/{id}/ - Remove usuário
+- GET /api/users/{id}/pedidos/ - Lista pedidos do usuário
 
 ## Status Codes
 - 200: Sucesso
