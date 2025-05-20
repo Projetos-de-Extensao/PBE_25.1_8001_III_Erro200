@@ -39,3 +39,10 @@ class UserViewSet(viewsets.ModelViewSet):
         pedidos = user.pedido_set.all()
         serializer = ProdutoSerializer(pedidos, many=True)
         return Response(serializer.data)
+
+    def get_permissions(self):
+        if self.action == 'create':
+            permission_classes = [permissions.AllowAny]
+        else:
+            permission_classes = [permissions.IsAuthenticated]
+        return [permission() for permission in permission_classes]
