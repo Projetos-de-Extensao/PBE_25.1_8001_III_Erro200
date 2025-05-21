@@ -4,7 +4,7 @@
             "model": "auth.user",
             "pk": 1,
             "fields": {
-                "username": "cliente1",
+                "username": "morador1",
                 "first_name": "João",
                 "last_name": "Silva",
                 "email": "joao@exemplo.com",
@@ -16,12 +16,86 @@
             "model": "auth.user",
             "pk": 2,
             "fields": {
-                "username": "cliente2",
-                "first_name": "Maria",
+                "username": "entregador1",
+                "first_name": "Pedro",
                 "last_name": "Santos",
-                "email": "maria@exemplo.com",
+                "email": "pedro@exemplo.com",
                 "password": "pbkdf2_sha256$600000$abc123def456$",
                 "is_active": true
+            }
+        },
+        {
+            "model": "auth.user",
+            "pk": 3,
+            "fields": {
+                "username": "barqueiro1",
+                "first_name": "Carlos",
+                "last_name": "Oliveira",
+                "email": "carlos@exemplo.com",
+                "password": "pbkdf2_sha256$600000$abc123def456$",
+                "is_active": true
+            }
+        }
+    ],
+    "user_profiles": [
+        {
+            "model": "myapp.userprofile",
+            "pk": 1,
+            "fields": {
+                "user": 1,
+                "user_type": "MORADOR"
+            }
+        },
+        {
+            "model": "myapp.userprofile",
+            "pk": 2,
+            "fields": {
+                "user": 2,
+                "user_type": "ENTREGADOR"
+            }
+        },
+        {
+            "model": "myapp.userprofile",
+            "pk": 3,
+            "fields": {
+                "user": 3,
+                "user_type": "BARQUEIRO"
+            }
+        }
+    ],
+    "portos": [
+        {
+            "model": "myapp.porto",
+            "pk": 1,
+            "fields": {
+                "nome": "Porto Central",
+                "porto": "Porto 1"
+            }
+        },
+        {
+            "model": "myapp.porto",
+            "pk": 2,
+            "fields": {
+                "nome": "Porto Sul",
+                "porto": "Porto 2"
+            }
+        }
+    ],
+    "postos": [
+        {
+            "model": "myapp.posto",
+            "pk": 1,
+            "fields": {
+                "nome": "Posto Ilha 1",
+                "armario": "Armário 1"
+            }
+        },
+        {
+            "model": "myapp.posto",
+            "pk": 2,
+            "fields": {
+                "nome": "Posto Ilha 2",
+                "armario": "Armário 2"
             }
         }
     ],
@@ -30,24 +104,16 @@
             "model": "myapp.item",
             "pk": 1,
             "fields": {
-                "nome": "Pizza Margherita",
-                "descricao": "Pizza tradicional italiana com molho de tomate, mussarela e manjericão"
+                "nome": "Cesta Básica",
+                "descricao": "Cesta com itens básicos de alimentação"
             }
         },
         {
             "model": "myapp.item",
             "pk": 2,
             "fields": {
-                "nome": "Pizza Calabresa",
-                "descricao": "Pizza com molho de tomate, mussarela e calabresa fatiada"
-            }
-        },
-        {
-            "model": "myapp.item",
-            "pk": 3,
-            "fields": {
-                "nome": "Pizza Portuguesa",
-                "descricao": "Pizza com molho de tomate, mussarela, presunto, ovos, cebola e ervilhas"
+                "nome": "Medicamentos",
+                "descricao": "Kit de medicamentos básicos"
             }
         }
     ],
@@ -57,19 +123,33 @@
             "pk": 1,
             "fields": {
                 "cliente": 1,
-                "itens": [1, 2],
-                "valor_total": "89.90",
-                "status": "Entregue"
+                "entregador": 2,
+                "barqueiro": null,
+                "itens": [1],
+                "valor_proposto": "100.00",
+                "valor_final": null,
+                "porto_origem": 1,
+                "posto_destino": 1,
+                "status": "A_CONFIRMAR",
+                "created_at": "2025-05-21T10:00:00Z",
+                "updated_at": "2025-05-21T10:00:00Z"
             }
         },
         {
             "model": "myapp.pedido",
             "pk": 2,
             "fields": {
-                "cliente": 2,
-                "itens": [2, 3],
-                "valor_total": "94.90",
-                "status": "Em trânsito"
+                "cliente": 1,
+                "entregador": 2,
+                "barqueiro": 3,
+                "itens": [1, 2],
+                "valor_proposto": "150.00",
+                "valor_final": "150.00",
+                "porto_origem": 2,
+                "posto_destino": 2,
+                "status": "EM_TRAVESSIA",
+                "created_at": "2025-05-21T09:00:00Z",
+                "updated_at": "2025-05-21T11:00:00Z"
             }
         }
     ]
