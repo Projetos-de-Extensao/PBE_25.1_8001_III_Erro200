@@ -24,56 +24,69 @@ class UserSerializer(serializers.ModelSerializer):
         read_only_fields = ['id']
 
 class UserProfileSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
+    # Campos do User model
+    username = serializers.CharField(source='user.username')
+    password = serializers.CharField(write_only=True, required=True)
+    email = serializers.CharField(source='user.email', required=False, allow_blank=True)
+    first_name = serializers.CharField(source='user.first_name', required=False, allow_blank=True)
+    last_name = serializers.CharField(source='user.last_name', required=False, allow_blank=True)
     
     class Meta:
         model = UserProfile
-        fields = ['id', 'user', 'user_type']
+        fields = ['id', 'username', 'password', 'email', 'first_name', 'last_name', 'user_type']
         read_only_fields = ['id']
 
     def create(self, validated_data):
-        user_data = validated_data.pop('user')
-        password = user_data.pop('password')
-        
-        # Create User instance
-        user = User.objects.create_user(
-            username=user_data['username'],
-            email=user_data.get('email', ''),
-            password=password,
-            first_name=user_data.get('first_name', ''),
-            last_name=user_data.get('last_name', '')
-        )
-        
-        # Create UserProfile instance
-        user_profile = UserProfile.objects.create(
-            user=user,
-            **validated_data
-        )
-        
-        return user_profile
+        try:
+            print("Received data:", validated_data)  # Debug print
+            
+            # Extract user data from nested structure
+            user_data = validated_data.pop('user', {})
+            password = validated_data.pop('password')
+            user_type = validated_data.get('user_type')
+            
+            # Validation
+            if not user_data.get('username'):
+                raise serializers.ValidationError("Username is required")
+            if not password:
+                raise serializers.ValidationError("Password is required")
+            if not user_type:
+                raise serializers.ValidationError("User type is required")
+            
+            # Create the User instance
+            user = User.objects.create_user(
+                username=user_data['username'],
+                email=user_data.get('email', ''),
+                first_name=user_data.get('first_name', ''),
+                last_name=user_data.get('last_name', ''),
+                password=password
+            )
 
-    def update(self, instance, validated_data):
-        user_data = validated_data.pop('user', None)
-        
-        if user_data:
-            # Update User instance
-            user = instance.user
-            password = user_data.pop('password', None)
+            # If user type is ADMIN, make them a superuser
+            if user_type == 'ADMIN':
+                user.is_staff = True
+                user.is_superuser = True
+                user.save()
             
-            for attr, value in user_data.items():
-                setattr(user, attr, value)
-                
-            if password:
-                user.set_password(password)
-                
-            user.save()
+            # Create the UserProfile instance
+            user_profile = UserProfile.objects.create(
+                user=user,
+                user_type=user_type
+            )
             
-        # Update UserProfile instance
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
+            return user_profile
             
-        instance.save()
-        return instance
+        except Exception as e:
+            print(f"Error creating user: {str(e)}")
+            # If user was created but profile creation failed, delete the user
+            if 'user' in locals():
+                user.delete()
+            raise serializers.ValidationError(str(e))
+
+    def to_representation(self, instance):
+        ret = super().to_representation(instance)
+        ret['id'] = instance.id
+        return ret
 
 
 class PedidoSerializer(serializers.ModelSerializer):

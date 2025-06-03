@@ -15,20 +15,29 @@ class PedidoViewSet(viewsets.ModelViewSet):
         if user.is_superuser:
             return Pedido.objects.all()
         
-        user_profile = UserProfile.objects.get(user=user)
-        
-        if user_profile.user_type == 'MORADOR':
-            return Pedido.objects.filter(cliente=user)
-        elif user_profile.user_type == 'ENTREGADOR':
-            return Pedido.objects.filter(
-                status='A_CONFIRMAR'
-            ) | Pedido.objects.filter(entregador=user)
-        elif user_profile.user_type == 'BARQUEIRO':
-            return Pedido.objects.filter(
-                status='NO_PORTO'
-            ) | Pedido.objects.filter(barqueiro=user)
-        elif user_profile.user_type == 'ADMIN':
-            return Pedido.objects.all()
+        try:
+            user_profile = UserProfile.objects.get(user=user)
+            
+            if user_profile.user_type == 'MORADOR':
+                # Morador vê apenas seus próprios pedidos
+                return Pedido.objects.filter(cliente=user).order_by('-created_at')
+            elif user_profile.user_type == 'ENTREGADOR':
+                # Entregador vê pedidos disponíveis e seus aceitos
+                return (
+                    Pedido.objects.filter(status='A_CONFIRMAR') |
+                    Pedido.objects.filter(entregador=user, status__in=['ACEITO', 'EM_TRANSITO', 'NO_PORTO'])
+                ).order_by('-created_at')
+            elif user_profile.user_type == 'BARQUEIRO':
+                # Barqueiro vê pedidos no porto e seus aceitos
+                return (
+                    Pedido.objects.filter(status='NO_PORTO') |
+                    Pedido.objects.filter(barqueiro=user, status__in=['EM_TRAVESSIA', 'NO_POSTO'])
+                ).order_by('-created_at')
+            elif user_profile.user_type == 'ADMIN':
+                return Pedido.objects.all()
+        except UserProfile.DoesNotExist:
+            return Pedido.objects.none()
+            
         return Pedido.objects.none()
 
     @action(detail=True, methods=['post'])
@@ -112,8 +121,17 @@ class UserViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=['get'])
     def pedidos(self, request, pk=None):
         user_profile = self.get_object()
-        pedidos = user_profile.user.pedido_set.all()  # Access pedidos through user
-        serializer = PedidoSerializer(pedidos, many=True)  # Changed from ProdutoSerializer
+        # Verifica o tipo de usuário e retorna os pedidos apropriados
+        if user_profile.user_type == 'MORADOR':
+            pedidos = Pedido.objects.filter(cliente=user_profile.user)
+        elif user_profile.user_type == 'ENTREGADOR':
+            pedidos = Pedido.objects.filter(entregador=user_profile.user)
+        elif user_profile.user_type == 'BARQUEIRO':
+            pedidos = Pedido.objects.filter(barqueiro=user_profile.user)
+        else:
+            pedidos = Pedido.objects.none()
+            
+        serializer = PedidoSerializer(pedidos, many=True)
         return Response(serializer.data)
 
     def get_permissions(self):
