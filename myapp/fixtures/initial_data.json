@@ -99,24 +99,7 @@
             }
         }
     ],
-    "items": [
-        {
-            "model": "myapp.item",
-            "pk": 1,
-            "fields": {
-                "nome": "Cesta Básica",
-                "descricao": "Cesta com itens básicos de alimentação"
-            }
-        },
-        {
-            "model": "myapp.item",
-            "pk": 2,
-            "fields": {
-                "nome": "Medicamentos",
-                "descricao": "Kit de medicamentos básicos"
-            }
-        }
-    ],
+
     "pedidos": [
         {
             "model": "myapp.pedido",
@@ -125,7 +108,7 @@
                 "cliente": 1,
                 "entregador": 2,
                 "barqueiro": null,
-                "itens": [1],
+                "descricao": "Cesta Básica",
                 "valor_proposto": "100.00",
                 "valor_final": null,
                 "porto_origem": 1,
@@ -142,7 +125,7 @@
                 "cliente": 1,
                 "entregador": 2,
                 "barqueiro": 3,
-                "itens": [1, 2],
+                "descricao": "Cesta Básica + Kit de medicamentos",
                 "valor_proposto": "150.00",
                 "valor_final": "150.00",
                 "porto_origem": 2,

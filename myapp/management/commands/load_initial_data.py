@@ -1,6 +1,8 @@
 from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
-from myapp.models import Item, Pedido, Porto, Posto, UserProfile
+from django.utils.timezone import make_aware
+from myapp.models import Pedido, Porto, Posto, UserProfile
+from datetime import datetime
 import json
 import os
 from django.conf import settings
@@ -56,15 +58,6 @@ class Command(BaseCommand):
                 )
                 self.stdout.write(f'Posto {fields["nome"]} criado com sucesso!')
 
-            # Criar itens
-            for item_data in data['items']:
-                fields = item_data['fields']
-                Item.objects.create(
-                    nome=fields['nome'],
-                    descricao=fields['descricao']
-                )
-                self.stdout.write(f'Item {fields["nome"]} criado com sucesso!')
-
             # Criar pedidos
             for pedido_data in data['pedidos']:
                 fields = pedido_data['fields']
@@ -72,6 +65,7 @@ class Command(BaseCommand):
                     cliente_id=fields['cliente'],
                     entregador_id=fields['entregador'],
                     barqueiro_id=fields['barqueiro'],
+                    descricao=fields['descricao'],
                     valor_proposto=fields['valor_proposto'],
                     valor_final=fields['valor_final'],
                     porto_origem_id=fields['porto_origem'],
@@ -80,7 +74,6 @@ class Command(BaseCommand):
                     created_at=make_aware(datetime.strptime(fields['created_at'], '%Y-%m-%dT%H:%M:%SZ')),
                     updated_at=make_aware(datetime.strptime(fields['updated_at'], '%Y-%m-%dT%H:%M:%SZ'))
                 )
-                pedido.itens.set(fields['itens'])
                 self.stdout.write(f'Pedido {pedido.id} criado com sucesso!')
 
             self.stdout.write(self.style.SUCCESS('Dados carregados com sucesso!'))

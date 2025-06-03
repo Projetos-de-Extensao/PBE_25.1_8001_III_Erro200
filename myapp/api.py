@@ -1,8 +1,8 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
-from .models import Pedido, Item, Porto, Posto, UserProfile
-from .serializers import PedidoSerializer, ItemSerializer, UserProfileSerializer, PortoSerializer, PostoSerializer
+from .models import Pedido, Porto, Posto, UserProfile
+from .serializers import PedidoSerializer, UserProfileSerializer, PortoSerializer, PostoSerializer
 from django.contrib.auth.models import User
 from rest_framework import permissions
 
@@ -102,16 +102,7 @@ class PostoViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
     
 
-class ItemViewSet(viewsets.ModelViewSet):
-    queryset = Item.objects.all()
-    serializer_class = ItemSerializer
 
-    @action(detail=True, methods=['get'])
-    def pedidos(self, request, pk=None):
-        item = self.get_object()
-        pedidos = item.pedido_set.all()
-        serializer = PedidoSerializer(pedidos, many=True)  # Changed from ProdutoSerializer
-        return Response(serializer.data)
     
 class UserViewSet(viewsets.ModelViewSet):
     queryset = UserProfile.objects.all()  # Changed from User to UserProfile

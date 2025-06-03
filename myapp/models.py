@@ -28,18 +28,11 @@ class Posto(models.Model):
     def __str__(self):
         return self.nome
 
-class Item(models.Model):
-    nome = models.CharField(max_length=100)
-    descricao = models.TextField()
-
-    def __str__(self):
-        return self.nome
-    
 class Pedido(models.Model):
     cliente = models.ForeignKey(User, related_name='pedidos_cliente', on_delete=models.CASCADE)
     entregador = models.ForeignKey(User, related_name='pedidos_entregador', null=True, blank=True, on_delete=models.SET_NULL)
     barqueiro = models.ForeignKey(User, related_name='pedidos_barqueiro', null=True, blank=True, on_delete=models.SET_NULL)
-    itens = models.ManyToManyField(Item)
+    descricao = models.TextField()
     valor_proposto = models.DecimalField(max_digits=10, decimal_places=2)
     valor_final = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     porto_origem = models.ForeignKey(Porto, related_name='pedidos_origem', on_delete=models.PROTECT)

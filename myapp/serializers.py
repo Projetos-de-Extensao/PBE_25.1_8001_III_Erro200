@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Pedido, Item, Porto, Posto, UserProfile
+from .models import Pedido, Porto, Posto, UserProfile
 from django.contrib.auth.models import User
 
 
@@ -89,7 +89,7 @@ class PedidoSerializer(serializers.ModelSerializer):
             'id', 'cliente', 'cliente_nome', 
             'entregador', 'entregador_nome',
             'barqueiro', 'barqueiro_nome',
-            'itens', 'valor_proposto', 'valor_final',
+            'descricao', 'valor_proposto', 'valor_final',
             'porto_origem', 'porto_nome',
             'posto_destino', 'posto_nome',
             'status', 'created_at', 'updated_at'
@@ -97,17 +97,9 @@ class PedidoSerializer(serializers.ModelSerializer):
         read_only_fields = ['entregador', 'barqueiro', 'status']
 
 
-class ProdutoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Pedido
-        fields = ['id', 'cliente', 'itens', 'valor_total', 'status']
-        read_only_fields = ['id']
 
-class ItemSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Item
-        fields = ['id', 'nome', 'descricao']
-        read_only_fields = ['id']
+
+
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True)
