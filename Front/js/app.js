@@ -140,7 +140,7 @@ async function loadEntregadorView() {
                 : '<p>Não há pedidos disponíveis no momento.</p>';
         
         // Mostrar pedidos em andamento
-        const pedidosEmAndamento = [...pedidosAceitos, ...pedidosEmTransito, ...pedidosNoPorto];
+        const pedidosEmAndamento = [...pedidosAceitos, ...pedidosEmTransito];
         document.getElementById('entregadorPedidosList').innerHTML = 
             pedidosEmAndamento.length > 0
                 ? pedidosEmAndamento.map(p => createPedidoCard(p, 'ENTREGADOR', p.status)).join('')
