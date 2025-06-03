@@ -101,9 +101,10 @@ async function loadMoradorView() {
     try {
         const userId = localStorage.getItem('userId');
         const pedidos = await getUserPedidos(userId);
+        const naoConcluidos = pedidos.filter(p => p.status !== 'CONCLUIDO');
         
         const pedidosList = document.getElementById('pedidosList');
-        pedidosList.innerHTML = pedidos.map(pedido => createPedidoCard(pedido, 'MORADOR')).join('');
+        pedidosList.innerHTML = naoConcluidos.map(pedido => createPedidoCard(pedido, 'MORADOR')).join('');
     } catch (error) {
         console.error('Erro ao carregar pedidos do morador:', error);
     }
@@ -211,6 +212,8 @@ function createPedidoCard(pedido, userType, pedidoStatus) {
         } else if (pedido.status === 'EM_TRAVESSIA') {
             actions = `<button onclick="handleMarkAsDelivered('${pedido.id}')">Marcar como Entregue</button>`;
         }
+    } else if (userType === 'MORADOR' && pedido.status === 'ENTREGUE') {
+        actions = `<button onclick="handleMarkAsCompleted('${pedido.id}')">Marcar como Concluído</button>`;
     }
 
     return `
@@ -311,6 +314,18 @@ async function handleMarkAsDelivered(pedidoId) {
     } catch (error) {
         console.error('Erro ao marcar pedido como entregue:', error);
         alert('Erro ao marcar pedido como entregue: ' + error.message);
+    }
+}
+
+async function handleMarkAsCompleted(pedidoId) {
+    try {
+        console.log('Marcando pedido como concluído:', pedidoId);
+        await markAsCompleted(pedidoId);
+        alert('Pedido marcado como concluído com sucesso!');
+        await loadMoradorView();
+    } catch (error) {
+        console.error('Erro ao marcar pedido como concluído:', error);
+        alert('Erro ao marcar pedido como concluído: ' + error.message);
     }
 }
 

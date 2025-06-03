@@ -8,7 +8,7 @@
                 "first_name": "João",
                 "last_name": "Silva",
                 "email": "joao@exemplo.com",
-                "password": "pbkdf2_sha256$600000$abc123def456$",
+                "password": "1234",
                 "is_active": true
             }
         },
@@ -20,7 +20,7 @@
                 "first_name": "Pedro",
                 "last_name": "Santos",
                 "email": "pedro@exemplo.com",
-                "password": "pbkdf2_sha256$600000$abc123def456$",
+                "password": "1234",
                 "is_active": true
             }
         },
@@ -32,7 +32,7 @@
                 "first_name": "Carlos",
                 "last_name": "Oliveira",
                 "email": "carlos@exemplo.com",
-                "password": "pbkdf2_sha256$600000$abc123def456$",
+                "password": "1234",
                 "is_active": true
             }
         }

@@ -87,6 +87,12 @@ async function markAsDelivered(pedidoId) {
     });
 }
 
+async function markAsCompleted(pedidoId) {
+    return apiCall(`/pedidos/${pedidoId}/marcar_concluido/`, {
+        method: 'POST'
+    });
+}
+
 // Portos
 async function getPortos() {
     return apiCall('/portos/');

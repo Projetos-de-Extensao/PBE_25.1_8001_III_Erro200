@@ -108,6 +108,33 @@ class PedidoViewSet(viewsets.ModelViewSet):
         
         return Response(self.serializer_class(pedido).data)
     
+    @action(detail=True, methods=['post'])
+    def marcar_concluido(self, request, pk=None):
+        pedido = self.get_object()
+        user_profile = UserProfile.objects.get(user=request.user)
+        
+        if user_profile.user_type != 'MORADOR':
+            return Response(
+                {'error': 'Apenas moradores podem marcar pedidos como concluídos'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+            
+        if pedido.cliente != request.user:
+            return Response(
+                {'error': 'Você só pode marcar como concluído seus próprios pedidos'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+            
+        if pedido.status != 'ENTREGUE':
+            return Response(
+                {'error': 'Este pedido ainda não foi entregue'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+            
+        pedido.status = 'CONCLUIDO'
+        pedido.save()
+        
+        return Response(self.serializer_class(pedido).data)
 
 class PortoViewSet(viewsets.ModelViewSet):
     queryset = Porto.objects.all()
