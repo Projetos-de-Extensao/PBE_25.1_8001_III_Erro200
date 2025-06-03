@@ -86,6 +86,28 @@ class PedidoViewSet(viewsets.ModelViewSet):
         
         return Response(self.serializer_class(pedido).data)
     
+    @action(detail=True, methods=['post'])
+    def marcar_entregue(self, request, pk=None):
+        pedido = self.get_object()
+        user_profile = UserProfile.objects.get(user=request.user)
+        
+        if user_profile.user_type != 'BARQUEIRO':
+            return Response(
+                {'error': 'Apenas barqueiros podem marcar pedidos como entregues'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+            
+        if pedido.status != 'EM_TRAVESSIA' or pedido.barqueiro != request.user:
+            return Response(
+                {'error': 'Este pedido não pode ser marcado como entregue'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+            
+        pedido.status = 'ENTREGUE'
+        pedido.save()
+        
+        return Response(self.serializer_class(pedido).data)
+    
 
 class PortoViewSet(viewsets.ModelViewSet):
     queryset = Porto.objects.all()

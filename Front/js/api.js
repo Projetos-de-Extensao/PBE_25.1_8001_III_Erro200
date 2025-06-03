@@ -69,6 +69,24 @@ async function acceptWaterTransport(pedidoId) {
     });
 }
 
+async function startTransport(pedidoId) {
+    return apiCall(`/pedidos/${pedidoId}/iniciar_transporte/`, {
+        method: 'POST'
+    });
+}
+
+async function deliverToPort(pedidoId) {
+    return apiCall(`/pedidos/${pedidoId}/entregar_no_porto/`, {
+        method: 'POST'
+    });
+}
+
+async function markAsDelivered(pedidoId) {
+    return apiCall(`/pedidos/${pedidoId}/marcar_entregue/`, {
+        method: 'POST'
+    });
+}
+
 // Portos
 async function getPortos() {
     return apiCall('/portos/');
