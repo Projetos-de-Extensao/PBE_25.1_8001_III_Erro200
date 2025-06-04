@@ -256,21 +256,7 @@ async function handleAcceptWaterTransport(pedidoId) {
 async function handleStartTransport(pedidoId) {
     try {
         console.log('Iniciando transporte do pedido:', pedidoId);
-        const response = await fetch(`http://localhost:8000/api/pedidos/${pedidoId}/iniciar_transporte/`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': getBasicAuth(
-                    localStorage.getItem('username'),
-                    localStorage.getItem('password')
-                )
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error('Falha ao iniciar transporte');
-        }
-
+        await startTransport(pedidoId);
         alert('Transporte iniciado com sucesso!');
         await loadEntregadorView();
     } catch (error) {
@@ -282,21 +268,7 @@ async function handleStartTransport(pedidoId) {
 async function handleDeliverToPort(pedidoId) {
     try {
         console.log('Entregando pedido no porto:', pedidoId);
-        const response = await fetch(`http://localhost:8000/api/pedidos/${pedidoId}/entregar_no_porto/`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': getBasicAuth(
-                    localStorage.getItem('username'),
-                    localStorage.getItem('password')
-                )
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error('Falha ao entregar no porto');
-        }
-
+        await deliverToPort(pedidoId);
         alert('Pedido entregue no porto com sucesso!');
         await loadEntregadorView();
     } catch (error) {
