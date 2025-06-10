@@ -20,7 +20,18 @@ O projeto propõe um app de entregas focado nas necessidades dos moradores da Il
 )
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em termos de interface e funcionamento.
+- 3 telas ao mesmo tempo ( Morador, entregador e barqueiro ) :
+![image](https://github.com/user-attachments/assets/991cba57-c79d-4b4c-a0d1-95a84230abab)
+
+- Cadastro:
+![image](https://github.com/user-attachments/assets/d788f58c-ed85-4a1b-877f-d16732a99299)
+
+- Login:
+![image](https://github.com/user-attachments/assets/b59795b5-1310-4235-9a09-4da5f5451940)
+
+- Swagger:
+![image](https://github.com/user-attachments/assets/5368306c-9965-4091-9877-e4b0f5f70e5b)
+
 
 ## Instalação
 **Linguagens**: Python<br>
@@ -32,7 +43,11 @@ Insira um manual ou um script para auxiliar ainda mais.
 Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
 
 ## Vídeo
-Adicione 1 ou mais vídeos com a execução do projeto final.
+
+https://github.com/user-attachments/assets/39d0bdd5-3647-4d57-b43d-0341da1eb5ff
+
+
+
 
 ## Outros
 Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
