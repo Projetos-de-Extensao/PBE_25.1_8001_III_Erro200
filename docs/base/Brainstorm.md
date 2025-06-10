@@ -38,61 +38,75 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
  
 ---
  
-### 2. Como será o processo para cadastrar um novo clientetorneio?
+### 2. Como será o processo de registro e autenticação dos usuários?
  
 <p align = "justify">
-<b>XXXX</b> - O moderador deverá fazer login e...
+<b>Bryan</b> - O usuário poderá se registrar escolhendo seu tipo (MORADOR, ENTREGADOR ou BARQUEIRO) e receberá um token JWT para autenticação.
  
-<b>YYYY</b> - O cliente...
+<b>Breno</b> - O registro deve incluir validações específicas para cada tipo de usuário, garantindo a segurança do sistema.
  
-<b>WWWW</b> - Com o usuário logado, ele deverá...
+<b>Guilherme</b> - A autenticação será baseada em tokens JWT, permitindo acesso seguro à API.
 
-<b>ZZZZ</b> - O cliente...
+<b>João</b> - O sistema deve validar as permissões específicas de cada tipo de usuário.
  
-<b>KKK</b> - O cliente...
+<b>Gustavo</b> - Os tokens devem ter expiração e o sistema deve implementar refresh tokens.
  
 ---
  
-### 3. Como será a forma de adicionar produtos?
+### 3. Como será o fluxo de um pedido no sistema?
  
 <p align = "justify">
-<b>XXXX</b> - O cliente ao cadastrar...
+<b>Bryan</b> - O pedido inicia com o morador criando uma solicitação com descrição e valor proposto.
 </p>
  
 <p align = "justify">
-<b>YYYYY</b> - O produto tem...
+<b>Breno</b> - Entregadores podem aceitar pedidos e iniciar o transporte até o porto.
 </p>
  
-<b>ZZZZ</b> - O produto....
+<b>Guilherme</b> - No porto, barqueiros podem aceitar a travessia até o posto de destino.
  
-<b>XXXX</b> - O produto....
+<b>João</b> - O sistema rastreia cada etapa do pedido através de status bem definidos.
+ 
+<b>Gustavo</b> - O fluxo termina com a confirmação do morador após receber o pedido.
 
  
 ---
  
-### 4. Outras perguntas pertinentes ao contexto
+### 4. Como será gerenciado o sistema de portos e postos?
 
 <p align = "justify">
-<b>XXXX</b> - Com a localização...
+<b>Bryan</b> - O sistema manterá um registro de todos os portos de origem e postos de destino.
  
-<b>YYYY</b> - O cliente...
+<b>Breno</b> - Cada pedido será associado a um porto de origem e um posto de destino específico.
  
-<b>ZZZ</b> - O cliente...
+<b>João</b> - A interface mostrará quais pedidos estão em cada porto/posto.
+
+<b>Guilherme</b> - Os barqueiros poderão ver todos os pedidos disponíveis em um porto específico.
+ 
+<b>Gustavo</b> - O sistema registrará o momento exato de chegada e saída em cada local.
  
 ---
  
-### 5. "Outras perguntas pertinentes ao contexto", Como seria a forma de adicionar do cliente adicionar os produtos ?
+### 5. Como será implementada a segurança e rastreabilidade?
 <p align = "justify">
-<b>XXX</b> - O cliente....
+<b>Bryan</b> - Cada ação no sistema será registrada com timestamp e usuário responsável.
+
+<b>Breno</b> - O sistema implementará diferentes níveis de permissão para cada tipo de usuário.
+
+<b>João</b> - Todas as transições de status serão validadas e registradas.
 </p>
  
-### 6. Quais informações seriam interessante para o cliente?
+### 6. Quais informações serão disponibilizadas para cada tipo de usuário?
 <p align = "justify">
-   <b>XXX</b> - Informações...
+   <b>Bryan</b> - Moradores verão seus próprios pedidos e seu histórico completo.
    
-   <b>ZZZZ</b> - O cliente usuário poderá acessar informações...
+   <b>Breno</b> - Entregadores verão pedidos disponíveis e os que estão transportando.
 
-   <b>WWWWs</b> - O usuário poderá ver scouts de partidas do torneio, ver as regras dos torneios, locais e data das partidas.
+   <b>Guilherme</b> - Barqueiros verão pedidos no porto e em travessia.
+   
+   <b>João</b> - Todos os usuários terão acesso ao histórico de suas próprias operações.
+   
+   <b>Gustavo</b> - O sistema fornecerá estatísticas e métricas relevantes para cada tipo de usuário.
    
 </p>
  

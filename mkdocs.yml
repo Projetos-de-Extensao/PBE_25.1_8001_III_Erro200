@@ -17,3 +17,26 @@ theme:
     - navigation.search.highlight
     - navigation.search.suggest
     - navigation.search.share
+
+nav:
+  - Home: index.md
+  - Base:
+    - Visão Geral: base/documento_de_visao.md
+    - Metodologia: base/metodologia.md
+    - 5W2H: base/5w2h.md
+    - Brainstorm: base/Brainstorm.md
+    - Mapa Mental: base/mapa_mental.md
+    - Entrevista: base/entrevista.md
+    - Pesquisa: base/pesquisa.md
+    - Protótipo Alta Fidelidade: base/prototipo_alta_fidelidade.md
+  - Modelagem:
+    - Overview: modelagem/index.md
+    - Diagrama de Classes: modelagem/diagrama_de_classes.md
+    - Arquitetura do Sistema: modelagem/das.md
+  - API:
+    - Visão Geral: api/overview.md
+    - Autenticação: api/authentication.md
+    - Endpoints: api/endpoints.md
+    - Fluxo de Status: api/status-flow.md
+  - Interação:
+    - Sprint 1: interacao/interacao1.md

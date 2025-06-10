@@ -6,7 +6,6 @@
 
 ## Alunos
 
-
 | Matrícula       | Nome |            |
 |------------|-------|--------------|
 | 202402798502      | Breno Chaves da Cunha
@@ -15,29 +14,83 @@
 | 202402697706      | João Gabriel Guedes
 | 202401614513      | Bryan Amorim dos Santos
 
+## Sobre o Projeto
 
-## Sobre
+O Projeto Erro 200 é uma aplicação web desenvolvida para gerenciar o processo de entrega de mercadorias na Ilha Primeira, conectando moradores, entregadores e barqueiros em um sistema integrado. O projeto aborda a necessidade específica de gerenciar entregas em um local onde o transporte é feito principalmente por barcos.
+
+### Principais Funcionalidades
+
+- Gerenciamento de pedidos de entrega
+- Sistema de rastreamento por status
+- Integração entre diferentes tipos de usuários (moradores, entregadores e barqueiros)
+- Gestão de portos e postos de entrega
+- API REST completa para todas as operações
+
+## Estrutura da Documentação
 
  **Aplicativo de Entregas para Ilha Primeira**
  O projeto propõe um app de entregas focado nas necessidades dos moradores da Ilha Primeira, onde o transporte é feito principalmente por barcos. A solução garante praticidade, rastreabilidade e segurança nas entregas, com funcionalidades específicas para três tipos de usuários: moradores, entregadores e barqueiros. O desenvolvimento inclui a criação de uma API REST.
 
-## Screenshots
-Adicione 3 ou mais screenshots do projeto em termos de interface e funcionamento.
+## Tecnologias Utilizadas
 
-## Instalação
-**Linguagens**: Python<br>
-**Tecnologias**: Django<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
-Insira um manual ou um script para auxiliar ainda mais.
+- **Backend**:
+  - Django REST Framework para a API
+  - SQLite como banco de dados
+  - JWT para autenticação
+  
+- **Frontend**:
+  - HTML5, CSS3 e JavaScript
+  - Interface responsiva e moderna
+  
+- **Documentação**:
+  - MkDocs com Material Theme
+  - Diagramas UML
+  - Protótipos de interface
 
-## Uso
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+## Instalação e Uso
 
-## Vídeo
-Adicione 1 ou mais vídeos com a execução do projeto final.
+Para iniciar o projeto localmente:
 
-## Outros
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+```bash
+# Clone o repositório
+git clone [URL_DO_REPOSITORIO]
+
+# Crie e ative um ambiente virtual
+python -m venv env
+source env/bin/activate  # Linux/macOS
+# ou
+env\Scripts\activate  # Windows
+
+# Instale as dependências
+pip install -r requirements.txt
+
+# Aplique as migrações
+python manage.py migrate
+
+# Carregue os dados iniciais
+python manage.py load_initial_data
+
+# Inicie o servidor
+python manage.py runserver
+```
+
+## Estrutura do Projeto
+
+1. **Frontend** (`/Front`)
+   - Interface web responsiva
+   - Autenticação de usuários
+   - Painéis específicos para cada tipo de usuário
+
+2. **Backend** (`/myapp`)
+   - API REST completa
+   - Modelos de dados
+   - Autenticação e autorização
+   - Gerenciamento de pedidos
+
+3. **Documentação** (`/docs`)
+   - Documentação técnica
+   - Guias de usuário
+   - Documentação da API
 
 
 # Como Baixar e Configurar a Aplicação
