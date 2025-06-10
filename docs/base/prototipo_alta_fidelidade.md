@@ -70,42 +70,16 @@ Na primeira versão do protótipo utilizamos a ferramenta <a href="https://mater
 ### Versão 2.0
 
 ### Tela Login
-[![Prototipo 1](../assets/prototipo/tela_de_login.png)](../assets/prototipo/tela_de_login.png)
+[![Prototipo 1](../assets/prototipo/tela_login.png)](../assets/prototipo/tela_login.png)
 
 ### Tela Cadastro 
  
 [![Prototipo 2](../assets/prototipo/registrar.png)](../assets/prototipo/registrar.png)
 
-### Tela Esqueceu Senha
+### Telas Principais
  
-[![Prototipo 3](../assets/prototipo/esqueceu_a_senha.png)](../assets/prototipo/esqueceu_a_senha.png)
+[![Prototipo 3](../assets/prototipo/telas_principais.png)](../assets/prototipo/tela_principais.png)
 
-### Tela Perfil
-[![Prototipo 4](../assets/prototipo/editar_perfil.png)](../assets/prototipo/editar_perfil.png)
-
-### Tela do Feed
-[![Prototipo 5](../assets/prototipo/feed.png)](../assets/prototipo/feed.png)
-
-### Tela Cadastrar em um torneio
-[![Prototipo 6](../assets/prototipo/cadastrar_no_torneio.png)](../assets/prototipo/cadastrar_no_torneio.png)
-
-### Tela Cadastrar torneio
-[![Prototipo 7](../assets/prototipo/cadastrar_torneio.png)](../assets/prototipo/cadastrar_torneio.png)
-
-### Tela Cadastrar torneio 2
-[![Prototipo 8](../assets/prototipo/cadastrar_torneio_2.png)](../assets/prototipo/cadastrar_torneio_2.png)
-
-### Tela dos meus torneios
-[![Prototipo 9](../assets/prototipo/meus_torneios.png)](../assets/prototipo/meus_torneios.png)
-
-### Tela das chaves do torneio
-[![Prototipo 10](../assets/prototipo/ver_torneio.png)](../assets/prototipo/ver_torneio.png)
-
-### Tela das estatíscicas
-[![Prototipo 11](../assets/prototipo/ver_estatisticas.png)](../assets/prototipo/ver_estatisticas.png)
-
-### Tela de adicionar resultado das partidas
-[![Prototipo 12](../assets/prototipo/adicionar_resultado_da_partida.png)](../assets/prototipo/adicionar_resultado_da_partida.png)
 
 link para o <a href="https://www.figma.com/file/karoCnQtvMXWHEwdMuhQs0/Prototipo?node-id=0%3A1">Protótipo</a>
  
