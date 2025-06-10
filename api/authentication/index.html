@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Autenticação - Projeto Erro 200</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Projeto Erro 200</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Base</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../base/documento_de_visao/" class="dropdown-item">Visão Geral</a>
+</li>
+                                    
+<li>
+    <a href="../../base/metodologia/" class="dropdown-item">Metodologia</a>
+</li>
+                                    
+<li>
+    <a href="../../base/5w2h/" class="dropdown-item">5W2H</a>
+</li>
+                                    
+<li>
+    <a href="../../base/Brainstorm/" class="dropdown-item">Brainstorm</a>
+</li>
+                                    
+<li>
+    <a href="../../base/mapa_mental/" class="dropdown-item">Mapa Mental</a>
+</li>
+                                    
+<li>
+    <a href="../../base/entrevista/" class="dropdown-item">Entrevista</a>
+</li>
+                                    
+<li>
+    <a href="../../base/pesquisa/" class="dropdown-item">Pesquisa</a>
+</li>
+                                    
+<li>
+    <a href="../../base/prototipo_alta_fidelidade/" class="dropdown-item">Protótipo Alta Fidelidade</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modelagem</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modelagem/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../modelagem/diagrama_de_classes/" class="dropdown-item">Diagrama de Classes</a>
+</li>
+                                    
+<li>
+    <a href="../../modelagem/das/" class="dropdown-item">Arquitetura do Sistema</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">API</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../overview/" class="dropdown-item">Visão Geral</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Autenticação</a>
+</li>
+                                    
+<li>
+    <a href="../endpoints/" class="dropdown-item">Endpoints</a>
+</li>
+                                    
+<li>
+    <a href="../status-flow/" class="dropdown-item">Fluxo de Status</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Interação</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../interacao/interacao1/" class="dropdown-item">Sprint 1</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../overview/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../endpoints/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#autenticacao" class="nav-link">Autenticação</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#como-autenticar" class="nav-link">Como Autenticar</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#obtendo-um-token" class="nav-link">Obtendo um Token</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#permissoes" class="nav-link">Permissões</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="autenticacao">Autenticação</h1>
+<p>A API utiliza autenticação baseada em JWT (JSON Web Tokens) para proteger os endpoints.</p>
+<h2 id="como-autenticar">Como Autenticar</h2>
+<p>Para acessar endpoints protegidos, é necessário incluir o token JWT no cabeçalho Authorization:</p>
+<pre><code>Authorization: Bearer &lt;token&gt;
+</code></pre>
+<h2 id="obtendo-um-token">Obtendo um Token</h2>
+<p>Para obter um token, o usuário deve primeiro se registrar e depois fazer login no sistema.</p>
+<h3 id="registro-de-usuario">Registro de Usuário</h3>
+<p>POST <code>/api/users/</code></p>
+<pre><code class="language-json">{
+  &quot;user&quot;: {
+    &quot;username&quot;: &quot;string&quot;,
+    &quot;password&quot;: &quot;string&quot;,
+    &quot;email&quot;: &quot;string&quot;,
+    &quot;first_name&quot;: &quot;string&quot;,
+    &quot;last_name&quot;: &quot;string&quot;
+  },
+  &quot;user_type&quot;: &quot;MORADOR|ENTREGADOR|BARQUEIRO|ADMIN&quot;
+}
+</code></pre>
+<h3 id="tipos-de-usuario">Tipos de Usuário</h3>
+<ul>
+<li><strong>MORADOR</strong>: Cliente que solicita entregas</li>
+<li><strong>ENTREGADOR</strong>: Responsável pelo transporte até o porto</li>
+<li><strong>BARQUEIRO</strong>: Responsável pela travessia</li>
+<li><strong>ADMIN</strong>: Administrador do sistema</li>
+</ul>
+<h2 id="permissoes">Permissões</h2>
+<ul>
+<li>Endpoints públicos: Registro de usuário</li>
+<li>Endpoints protegidos: Todos os outros endpoints requerem autenticação</li>
+<li>Algumas ações requerem tipos específicos de usuário (ex: apenas BARQUEIRO pode marcar uma travessia como concluída)</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
