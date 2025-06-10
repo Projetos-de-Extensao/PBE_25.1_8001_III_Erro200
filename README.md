@@ -15,9 +15,6 @@
 ## Sobre
 O projeto propõe um app de entregas focado nas necessidades dos moradores da Ilha Primeira, onde o transporte é feito principalmente por barcos. A solução garante praticidade, rastreabilidade e segurança nas entregas, com funcionalidades específicas para três tipos de usuários: moradores, entregadores e barqueiros. O desenvolvimento inclui a criação de uma API REST.
 
-## Link do Canva
-(https://www.canva.com/design/DAGkEt2vP9g/dsBjUmVpyzwLrZkqis9htA/edit?utm_content=DAGkEt2vP9g&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-)
 
 ## Screenshots
 - 3 telas ao mesmo tempo ( Morador, entregador e barqueiro ) :
@@ -32,25 +29,24 @@ O projeto propõe um app de entregas focado nas necessidades dos moradores da Il
 - Swagger:
 ![image](https://github.com/user-attachments/assets/5368306c-9965-4091-9877-e4b0f5f70e5b)
 
-
-## Instalação
-**Linguagens**: Python<br>
-**Tecnologias**: Django<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
-Insira um manual ou um script para auxiliar ainda mais.
-
-## Uso
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
-
 ## Vídeo
 
 https://github.com/user-attachments/assets/39d0bdd5-3647-4d57-b43d-0341da1eb5ff
 
 
+## Instalação
+**Linguagens**: Python<br>
+**Tecnologias**: Django<br>
+**Use o requirements.txt8** para o resto das dependências
+
+## Uso
+Após a migração, suba o servidor da api e somente depois disso, suba o index.html do front.
+Comandos estão todos citados em api_documentation.md
 
 
-## Outros
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+## Link do Canva
+(https://www.canva.com/design/DAGkEt2vP9g/dsBjUmVpyzwLrZkqis9htA/edit?utm_content=DAGkEt2vP9g&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+)
 
 
 # Como Baixar e Configurar a Aplicação
