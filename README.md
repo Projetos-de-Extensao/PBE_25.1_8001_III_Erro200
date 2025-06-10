@@ -37,7 +37,7 @@ https://github.com/user-attachments/assets/39d0bdd5-3647-4d57-b43d-0341da1eb5ff
 ## Instalação
 **Linguagens**: Python<br>
 **Tecnologias**: Django<br>
-**Use o requirements.txt8** para o resto das dependências
+**Use o requirements.txt** para o resto das dependências
 
 ## Uso
 Após a migração, suba o servidor da api e somente depois disso, suba o index.html do front.
